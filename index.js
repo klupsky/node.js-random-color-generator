@@ -18,19 +18,15 @@ const row = [
   `,
 ];
 
-console.log(chalk.hex(color).bold(row));
-console.log(
-  randomColor({
-    luminosity: 'light',
-    hue: 'blue',
-  }),
-);
-
-console.log(
-  chalk.hex(
-    randomColor({
-      luminosity: process.argv[3],
-      hue: process.argv[2],
-    }),
-  )('string'),
-);
+if (process.argv.length < 3) {
+  console.log(chalk.hex(color).bold(row));
+} else {
+  console.log(
+    chalk.hex(
+      randomColor({
+        luminosity: process.argv[3],
+        hue: process.argv[2],
+      }),
+    )(row),
+  );
+}
