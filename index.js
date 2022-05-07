@@ -22,11 +22,12 @@ const row = [
   `,
 ];
 
-//
-if (process.argv.length < 3) {
-  console.log(chalk.hex(color).bold(row));
+// if terminal input is node index.js, console.log in random color
 
-  //
+if (process.argv.length < 3) {
+  console.log(chalk.hex(color));
+
+  // else if there is input at [2] or/and [3], console log hue[2] and/or luminosity[2]
 } else {
   console.log(
     chalk.hex(
