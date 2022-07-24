@@ -19,3 +19,4 @@ node index.js
 
 - it should also accept hue color (red/green/blue)
 - it should accept luminosity (light/dark)
+# node.js-random-color-generator
