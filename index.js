@@ -3,11 +3,10 @@ import chalk from 'chalk';
 // import randomColor from npm
 import randomColor from 'randomcolor';
 
-// create a random color
-const color = '#' + Math.floor(Math.random() * 16777216).toString(16);
+const color = randomColor();
 
 // create the array-construct of block including random color hex code
-const row = [
+const colorArray = [
   `   ###############################
    ###############################
    ###############################
@@ -18,15 +17,13 @@ const row = [
    #####                    ######
    ###############################
    ###############################
-   ###############################
-  `,
+   ###############################`,
 ];
 
-//
 if (process.argv.length < 3) {
-  console.log(chalk.hex(color).bold(row));
-
-  //
+  console.log(chalk.hex(color).bold(colorArray));
+} else if (process.argv[2] === 'ask') {
+  console.log(`What color, what luminosity and hue should i console log?`);
 } else {
   console.log(
     chalk.hex(
@@ -34,6 +31,6 @@ if (process.argv.length < 3) {
         luminosity: process.argv[3],
         hue: process.argv[2],
       }),
-    )(row),
+    )(colorArray),
   );
 }
